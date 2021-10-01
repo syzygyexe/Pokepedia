@@ -1,2 +1,2 @@
 # pokepedia
-Pokepedia powered by Spring, Angular, TypeScript, TensorflowJS, MySQL
+Pokepedia powered by Spring, Angular, TypeScript, TensorflowJS and MySQL
