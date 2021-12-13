@@ -1,0 +1,19 @@
+<div class="mainframe">
+  <div class="maininnerframe">
+    <button
+      class="main__button"
+      [routerLink]="['/pokepedia']"
+      routerLinkActive="active"
+    >
+      Pokepedia
+    </button>
+    <button
+      class="main__button"
+      [routerLink]="['/pokecamera']"
+      routerLinkActive="active"
+    >
+      Pokecamera
+    </button>
+  </div>
+</div>
+<app-loading [hidden]="hidden"></app-loading>

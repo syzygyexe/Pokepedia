@@ -1,0 +1,751 @@
+/*****************************************************************/
+/************************* 4K resolution *************************/
+/*****************************************************************/
+/* ------------------------- NAVBAR ------------------------- */
+.mainnavbarframe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 1);
+  margin-bottom: 25px;
+}
+
+.searchfield {
+  width: 455px;
+  margin-left: 105px;
+  height: 35px;
+  font-size: 30px;
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+
+.navbar__a {
+  display: flex;
+  margin-left: 160px;
+}
+
+.navbar__a__link {
+  width: 45px;
+  height: 45px;
+  background: url("../../public/pokeball.png") center/ cover no-repeat;
+}
+
+.navbar__buttons {
+  display: flex;
+  margin-right: 30px;
+}
+
+.navbar__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  background-color: #e50914;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+  width: 130px;
+  height: 40px;
+  font-size: 17px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 100;
+  font-family: "Pokemon";
+  border-radius: 15px;
+  color: #fdd835;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.navbar__button:hover {
+  background: #f40612;
+}
+
+/* ------------------------- Pokeboxes Settings ------------------------- */
+/* All pokemon boxes settings */
+.pokemainframe {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+/* Each pokemon box settings */
+.pokeinnerframe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokecard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 1);
+  width: 220px;
+  height: 350px;
+  margin: 15px;
+  letter-spacing: 4px;
+  border-style: solid;
+  border-width: 0px;
+  border-color: black;
+  font-family: "Pokemon";
+}
+
+.pokeimgframe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  height: 140px;
+  width: 140px;
+}
+
+.pokeimg {
+  padding-bottom: 2.5px;
+  display: flex;
+  justify-content: center;
+  width: 170px;
+  height: auto;
+  transition: opacity 1s;
+  opacity: 0;
+}
+
+.pokeimg.ng-lazyloaded {
+  opacity: 1;
+}
+
+.pokecardname {
+  margin-top: 15px;
+  font-size: 28.5px;
+  height: 40px;
+}
+
+.pokecardtype {
+  font-size: 25px;
+  height: 40px;
+}
+
+.pokecardbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e50914;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+  width: 160px;
+  height: 40px;
+  border: 0;
+  font-size: 17px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 100;
+  font-family: "Pokemon";
+  border-radius: 15px;
+  color: #fdd835;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.pokecardbutton:hover {
+  background: #f40612;
+}
+
+/* ------------------------- Checkboxes ------------------------- */
+.checkboxesmainframe {
+  letter-spacing: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkboxform {
+  display: flex;
+  width: 35%;
+  height: 10%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.checkbox {
+  display: flex;
+  margin-right: 5px;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  font-family: "Pokemon";
+  width: 94px;
+  margin-bottom: 5px;
+}
+
+.checkbox__input {
+  display: none;
+}
+
+.checkbox__box {
+  /* Current font-size * 1.25 */
+  width: 3.5em;
+  height: 3.5em;
+  border: 2px solid #2266dc;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Make checkbox perfect square */
+  flex-shrink: 0;
+  transition: background 0.35s, border-color 0.35s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 1);
+  margin: 3px;
+}
+
+.checkbox__box::after {
+  /* Checkmark represenation */
+  content: "\2714";
+  font-size: 42px;
+  color: #fff;
+  /* By default checkbox symbol's scale is 0 */
+  transform: scale(0);
+  transition: transform 0.35s;
+}
+
+/* When checkbox__input is checked, select checkbox__box element */
+.checkbox__input:checked + .checkbox__box {
+  background: #2266dc;
+  border-color: #2266dc;
+}
+
+.checkbox__input:checked + .checkbox__box::after {
+  transform: scale(1);
+}
+
+/* ------------------------- Search Buttons ------------------------- */
+.buttonsmainframe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+}
+
+.searchButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e50914;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+  width: 210px;
+  height: 60px;
+  border: 0;
+  font-size: 20px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 100;
+  font-family: "Pokemon";
+  border-radius: 15px;
+  color: #fdd835;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.searchButtons:hover {
+  background: #f40612;
+}
+
+/* ------------------------- MODAL ------------------------- */
+/* Alter default CSS */
+::ng-deep .modal-content {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35%;
+  border: 0px;
+}
+
+/* Custom modal css */
+::ng-deep .modal__content {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  height: 820px;
+  border-radius: 20px;
+  box-shadow: 0 2px 250px rgba(0, 0, 0, 1);
+}
+
+::ng-deep .modal__close-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 30px;
+  margin-right: 7.5px;
+  margin-top: 5px;
+}
+
+::ng-deep .modal__detailed {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+::ng-deep .modal__pokeimg-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  height: 280px;
+  width: 280px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+::ng-deep .modal__pokeimg {
+  width: 340px;
+  height: auto;
+  padding-bottom: 5px;
+}
+
+::ng-deep .modal__font {
+  font-family: Pokemon;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+  letter-spacing: 3px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* ------------------------- PAGINATION ------------------------- */
+/* Main Frame */
+.paginationmainframe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Pokemon;
+  font-size: 24px;
+  margin-top: 30px;
+  margin-right: 35px;
+}
+
+/* All Buttons, except for current and disalbed */
+.pagination /deep/ .ngx-pagination a,
+.ngx-pagination button {
+  text-align: center;
+  line-height: 45px;
+  width: 75px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+  background-color: #e50914;
+}
+
+/* Current Button */
+.pagination /deep/ .ngx-pagination .current {
+  text-align: center;
+  line-height: 45px;
+  width: 75px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 2px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+  background-color: #e50914;
+  color: #64fd35;
+}
+
+/* Disabled buttons */
+.pagination /deep/ .ngx-pagination .disabled {
+  text-align: center;
+  line-height: 45px;
+  width: 75px;
+  height: 50px;
+  border-radius: 10px;
+  margin: 2px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+  background-color: #e50914;
+  color: #c7aa2a;
+}
+
+/* Disable standart previous page and next page pointers '<', '>' */
+.pagination /deep/ .ngx-pagination a::after {
+  display: none;
+}
+
+.pagination /deep/ .ngx-pagination li::before {
+  display: none;
+}
+
+.pagination /deep/ .ngx-pagination li::after {
+  display: none;
+}
+
+.pagination /deep/ .ngx-pagination a::before {
+  display: none;
+}
+
+/**********************************************************/
+/************************* 1696PX *************************/
+/**********************************************************/
+@media only screen and (max-width: 1696px) {
+  /* --------------------- Checkbox --------------------- */
+  .navbar__a {
+    margin-left: 140px;
+  }
+
+  .searchfield {
+    width: 430px;
+    margin-left: 125px;
+  }
+
+  .checkboxform {
+    width: 40%;
+  }
+}
+/**********************************************************/
+/************************* 1484PX *************************/
+/**********************************************************/
+@media only screen and (max-width: 1484px) {
+  .navbar__a {
+    margin-left: 120px;
+  }
+
+  .searchfield {
+    margin-left: 145px;
+    width: 400px;
+  }
+
+  /* --------------------- Checkbox --------------------- */
+  .checkboxform {
+    width: 45%;
+  }
+}
+
+/**********************************************************/
+/************************* 1320PX *************************/
+/**********************************************************/
+@media only screen and (max-width: 1320px) {
+  .navbar__a {
+    margin-left: 100px;
+  }
+
+  .searchfield {
+    margin-left: 155px;
+    width: 370px;
+  }
+
+  .navbar__buttons {
+    margin-right: 20px;
+  }
+
+  /* --------------------- Checkbox --------------------- */
+  .checkboxform {
+    width: 50%;
+  }
+}
+
+/**********************************************************/
+/************************* 1188PX *************************/
+/**********************************************************/
+@media only screen and (max-width: 1188px) {
+  .navbar__a {
+    margin-left: 80px;
+  }
+
+  .searchfield {
+    margin-left: 165px;
+    width: 350px;
+  }
+
+  .navbar__buttons {
+    margin-right: 10px;
+  }
+  /* --------------------- Checkbox --------------------- */
+  .checkboxform {
+    width: 55%;
+  }
+}
+
+/**********************************************************/
+/************************* 1080PX *************************/
+/**********************************************************/
+@media only screen and (max-width: 1080px) {
+  .navbar__a {
+    margin-left: 60px;
+  }
+
+  .searchfield {
+    margin-left: 150px;
+    width: 340px;
+  }
+
+  .navbar__buttons {
+    margin-right: 5px;
+  }
+
+  .navbar__button {
+    margin-right: 5px;
+    width: 120px;
+    font-size: 16px;
+  }
+  /* --------------------- Checkbox --------------------- */
+  .checkboxform {
+    width: 60%;
+  }
+}
+
+/**********************************************************/
+/************************* 990PX *************************/
+/**********************************************************/
+@media only screen and (max-width: 990px) {
+  .navbar__a {
+    margin-left: 40px;
+  }
+
+  .searchfield {
+    margin-left: 155px;
+    width: 320px;
+  }
+
+  .navbar__button {
+    width: 110px;
+    font-size: 15px;
+  }
+  /* --
+  /* --------------------- Checkbox --------------------- */
+  .checkboxform {
+    width: 65%;
+  }
+}
+
+/**********************************************************/
+/************************* 914PX *************************/
+/**********************************************************/
+@media only screen and (max-width: 914px) {
+  .navbar__a {
+    margin-left: 20px;
+  }
+
+  .searchfield {
+    margin-left: 142px;
+    width: 290px;
+  }
+
+  .navbar__buttons {
+    margin-right: 2.5px;
+  }
+
+  .navbar__button {
+    margin-right: 2.5px;
+    width: 100px;
+    font-size: 14px;
+  }
+  /* --------------------- Checkbox --------------------- */
+  .checkboxform {
+    width: 70%;
+  }
+}
+
+/**********************************************************/
+/************************* 879PX *************************/
+/**********************************************************/
+@media only screen and (max-width: 879px) {
+  .navbar__a {
+    margin-left: 20px;
+  }
+
+  .searchfield {
+    width: 260px;
+    margin-left: 121px;
+  }
+
+  .navbar__buttons {
+    margin-right: 2px;
+  }
+  .navbar__button {
+    width: 90px;
+    margin-right: 2px;
+    font-size: 11px;
+  }
+  /* --------------------- Checkbox --------------------- */
+  .checkboxform {
+    width: 75%;
+  }
+  /*  PAGINATION */
+  /* All Buttons, except for current and disalbed */
+  .pagination /deep/ .ngx-pagination a,
+  .ngx-pagination button {
+    width: 65px;
+    font-size: 20px;
+  }
+
+  /* Current Button */
+  .pagination /deep/ .ngx-pagination .current {
+    width: 65px;
+    font-size: 20px;
+  }
+
+  /* Disabled buttons */
+  .pagination /deep/ .ngx-pagination .disabled {
+    width: 65px;
+    font-size: 20px;
+  }
+}
+
+/**********************************************************/
+/************************* 792PX *************************/
+/**********************************************************/
+@media only screen and (max-width: 792px) {
+  /* --------------------- Checkbox --------------------- */
+  .checkboxform {
+    width: 80%;
+  }
+}
+
+/**********************************************************/
+/************************* 743PX *************************/
+/**********************************************************/
+@media only screen and (max-width: 743px) {
+  /* --------------------- Checkbox --------------------- */
+  .checkboxform {
+    width: 85%;
+  }
+
+  /*  PAGINATION */
+  /* All Buttons, except for current and disalbed */
+  .pagination /deep/ .ngx-pagination a,
+  .ngx-pagination button {
+    width: 55px;
+    font-size: 16px;
+  }
+
+  /* Current Button */
+  .pagination /deep/ .ngx-pagination .current {
+    width: 55px;
+    font-size: 16px;
+  }
+
+  /* Disabled buttons */
+  .pagination /deep/ .ngx-pagination .disabled {
+    width: 55px;
+    font-size: 16px;
+  }
+}
+
+/**********************************************************/
+/************************* 699PX *************************/
+/**********************************************************/
+
+@media only screen and (max-width: 699px) {
+  /* --------------------- Checkbox --------------------- */
+  .checkboxform {
+    width: 90%;
+  }
+}
+
+/**********************************************************/
+/************************* 660PX *************************/
+/**********************************************************/
+@media only screen and (max-width: 660px) {
+  /* --------------------- Checkbox --------------------- */
+  .checkboxform {
+    width: 95%;
+  }
+
+  .checkbox {
+    width: 88px;
+    font-size: 14px;
+  }
+  /*  PAGINATION */
+  /* All Buttons, except for current and disalbed */
+  .pagination /deep/ .ngx-pagination a,
+  .ngx-pagination button {
+    width: 52.5px;
+    font-size: 16px;
+  }
+
+  /* Current Button */
+  .pagination /deep/ .ngx-pagination .current {
+    width: 52.5px;
+    font-size: 16px;
+  }
+
+  /* Disabled buttons */
+  .pagination /deep/ .ngx-pagination .disabled {
+    width: 52.5px;
+    font-size: 16px;
+  }
+}
+
+/**********************************************************/
+/************************* 600PX *************************/
+/**********************************************************/
+@media only screen and (max-width: 600px) {
+  /*  PAGINATION */
+  /* All Buttons, except for current and disalbed */
+  .pagination /deep/ .ngx-pagination a,
+  .ngx-pagination button {
+    width: 70px;
+    font-size: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  /* Current Button */
+  .pagination /deep/ .ngx-pagination .current {
+    width: 70px;
+    font-size: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  /* Disabled buttons */
+  .pagination /deep/ .ngx-pagination .disabled {
+    width: 70px;
+    font-size: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+/**********************************************************/
+/************************* 568PX *************************/
+/**********************************************************/
+@media only screen and (max-width: 568px) {
+  /* --------------------- Checkbox --------------------- */
+  .checkbox {
+    width: 82px;
+    font-size: 13px;
+  }
+}
+
+/**********************************************************/
+/************************* 531PX *************************/
+/**********************************************************/
+@media only screen and (max-width: 531px) {
+  /* --------------------- Checkbox --------------------- */
+  .checkbox {
+    margin-right: 1.5px;
+    width: 78px;
+    font-size: 12px;
+  }
+}
+
+/**********************************************************/
+/************************* 503PX *************************/
+/**********************************************************/
+@media only screen and (max-width: 503px) {
+  /* --------------------- Checkbox --------------------- */
+  .checkbox {
+    margin-right: 1px;
+    width: 76px;
+    font-size: 11px;
+  }
+}

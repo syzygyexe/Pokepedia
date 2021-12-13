@@ -1,0 +1,150 @@
+.mainframediv {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ------------------------- NAVBAR ------------------------- */
+.mainnavbarframe {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 1);
+  margin-bottom: 25px;
+  height: 53px;
+}
+
+.navbar__a {
+  display: flex;
+  margin-left: 160px;
+}
+
+.navbar__a__link {
+  width: 45px;
+  height: 45px;
+  background: url("../../public/pokeball.png") center/ cover no-repeat;
+}
+
+.navbar__buttons {
+  display: flex;
+  margin-right: 30px;
+}
+
+.navbar__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  background-color: #e50914;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+  width: 130px;
+  height: 40px;
+  font-size: 17px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 100;
+  font-family: "Pokemon";
+  border-radius: 15px;
+  color: #fdd835;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.navbar__button:hover {
+  background: #f40612;
+}
+
+/* ------------------ TITLE AND DESCRIPTION ------------------ */
+.pokecamera__titlediv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.pokecamera__title {
+  font-family: "Pokemon";
+  letter-spacing: 5px;
+}
+
+.pokecamera__desc {
+  padding-top: 3px;
+  letter-spacing: 3px;
+  font-family: "Pokemon";
+}
+
+.pokeimages__div {
+  margin-top: 2%;
+  margin-left: 25%;
+  margin-right: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokeimage__div {
+  margin-left: 4%;
+  margin-right: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------- Webcamera/canvas and pokemon info ------------- */
+.webcam__canvas__pokeinfo {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 4%;
+  height: 670px;
+  font-size: 15px;
+}
+
+.webcam {
+  display: flex;
+  text-align: center;
+}
+
+.canvas {
+  position: absolute;
+  width: 720px;
+  height: 540px;
+  margin-left: -406px;
+  text-align: center;
+}
+
+.pokecard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 1);
+  letter-spacing: 4px;
+  border-style: solid;
+  border-width: 0px;
+  border-color: black;
+  font-family: "Pokemon";
+  height: 670px;
+  width: 550px;
+}
+
+.pokeimgframe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  height: 140px;
+  width: 140px;
+}
+
+.pokecard__image {
+  height: 405px;
+  width: 405px;
+  margin-top: 15px;
+}

@@ -1,0 +1,99 @@
+<div className="mainframediv">
+  <!-- Navbar -->
+  <nav class="mainnavbarframe">
+    <div class="navbar__a">
+      <a class="navbar__a__link" [routerLink]="['/']"></a>
+    </div>
+    <div class="navbar__buttons">
+      <button class="navbar__button" [routerLink]="['/pokepedia']">
+        Pokepedia
+      </button>
+      <button class="navbar__button">About</button>
+    </div>
+  </nav>
+
+  <!-- Page's title and description -->
+  <div class="pokecamera__titlediv">
+    <h1 class="pokecamera__title">What is a Pokecamera?</h1>
+    <h3 class="pokecamera__desc">
+      The pokecamera is trained to recognize 4 different pokémons and provide
+      detailed information about them.
+    </h3>
+  </div>
+  <!-- Images below description -->
+  <div class="pokeimages__div">
+    <div class="pokeimage__div">
+      <img
+        class="pokeimage"
+        src="assets\img\Daco_4720279.png"
+        alt="Pikachu"
+        height="140"
+        widht="140"
+      />
+      <h5>Pikachu</h5>
+    </div>
+    <div class="pokeimage__div">
+      <img
+        class="pokeimage"
+        src="assets\img\pinpng.com-blastoise-png-182210.png"
+        alt="Blastoise"
+        height="140"
+        widht="140"
+      />
+      <h5>Blastoise</h5>
+    </div>
+    <div class="pokeimage__div">
+      <img
+        class="pokeimage"
+        src="assets\img\pinpng.com-charizard-png-2970586.png"
+        alt="Charizard"
+        height="140"
+        widht="140"
+      />
+      <h5>Charizard</h5>
+    </div>
+    <div class="pokeimage__div">
+      <img
+        class="pokeimage"
+        src="assets\img\pinpng.com-jolteon-png-1157565.png"
+        alt="Eevee"
+        height="140"
+        widht="140"
+      />
+      <h5>Eevee</h5>
+    </div>
+  </div>
+  <!-- Webcamera/canvas and pokemon info -->
+  <div class="webcam__canvas__pokeinfo">
+    <webcam
+      #webcam
+      class="webcam"
+      [width]="720"
+      [height]="540"
+      [allowCameraSwitch]="false"
+    >
+    </webcam>
+    <canvas class="canvas" #canvas></canvas>
+    <div
+      class="pokecard"
+      [ngStyle]="{
+        background: setStyle(
+          pokemon.type.charAt(0).toUpperCase() + pokemon.type.slice(1)
+        )
+      }"
+    >
+      <h2 *ngIf="pokemon.name == 'Who Is This Pokemon?'">
+        {{ pokemon?.name }}
+      </h2>
+      <h2 *ngIf="pokemon.name != 'Who Is This Pokemon?'">
+        Name: {{ pokemon?.name | titlecase }}
+      </h2>
+      <h2>Type: {{ pokemon?.type | titlecase }}</h2>
+      <h2 *ngIf="pokemon.height">Height: {{ pokemon?.height }}cm</h2>
+      <h2 *ngIf="!pokemon.height">Height: Unknown</h2>
+      <h2 *ngIf="pokemon.weight">Weight: {{ pokemon?.weight }}kg</h2>
+      <h2 *ngIf="!pokemon.weight">Weight: Unknown</h2>
+      <img class="pokecard__image" src="{{ pokemon?.imageUrl }}" />
+    </div>
+  </div>
+</div>

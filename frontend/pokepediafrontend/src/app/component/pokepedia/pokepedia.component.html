@@ -1,0 +1,136 @@
+<div class="mainframe">
+  <nav class="mainnavbarframe">
+    <div class="navbar__a">
+      <a class="navbar__a__link" [routerLink]="['/']"></a>
+    </div>
+    <div>
+      <input
+        class="searchfield"
+        type="text"
+        (keyup)="getPokemonsByName($event)"
+      />
+    </div>
+    <div class="navbar__buttons">
+      <button class="navbar__button" [routerLink]="['/pokecamera']">
+        Pokecamera
+      </button>
+      <button class="navbar__button">About</button>
+    </div>
+  </nav>
+  <div class="checkboxesmainframe">
+    <form class="checkboxform">
+      <div class="checkboxesinnerframe" *ngFor="let singleType of allTypes">
+        <label class="checkbox" for="{{ singleType }}">
+          <input
+            id="{{ singleType }}"
+            class="checkbox__input"
+            type="checkbox"
+            (change)="appendPokemonType(singleType)"
+          />
+          <div
+            #checkbox
+            class="checkbox__box"
+            [ngStyle]="{
+              background: setStyle(singleType),
+              'border-color': setStyle(singleType)
+            }"
+          ></div>
+          {{ singleType }}
+        </label>
+      </div>
+    </form>
+    <br />
+    <div class="buttonsmainframe">
+      <!-- Search error -->
+      <ng-template #error>ERROR</ng-template>
+      <button
+        class="searchButtons"
+        (click)="getPokemonsByType(selectedTypes, error)"
+      >
+        Search By Type
+      </button>
+      <button class="searchButtons" (click)="getPokemons()">Find All</button>
+    </div>
+    <br />
+  </div>
+
+  <div class=""></div>
+
+  <div class="pokemainframe">
+    <div
+      class="pokeinnerframe"
+      *ngFor="let pokemon of pokemons | paginate: config"
+    >
+      <div
+        class="pokecard"
+        [ngStyle]="{
+          background: setStyle(
+            pokemon.type.charAt(0).toUpperCase() + pokemon.type.slice(1)
+          )
+        }"
+      >
+        <div class="pokeimgframe">
+          <img
+            class="pokeimg"
+            [lazyLoad]="pokemon.imageUrl"
+            [offset]="offset"
+          />
+        </div>
+        <h1 class="pokecardname">{{ pokemon?.name | titlecase }}</h1>
+        <h2 class="pokecardtype">{{ pokemon?.type | titlecase }}</h2>
+        <button class="pokecardbutton" (click)="onOpenModal(pokemonModal)">
+          Learn More...
+        </button>
+
+        <!-- Modal Body -->
+        <ng-template #pokemonModal>
+          <div
+            [ngStyle]="{
+              background: setStyle(
+                pokemon.type.charAt(0).toUpperCase() + pokemon.type.slice(1)
+              )
+            }"
+            class="modal__content"
+          >
+            <div class="modal__close-button">
+              <button
+                type="button"
+                class="btn-close"
+                aria-label="Close"
+                (click)="onCloseModal()"
+              ></button>
+            </div>
+            <div class="modal__detailed">
+              <h1 class="modal__font">Name: {{ pokemon?.name | titlecase }}</h1>
+              <h2 class="modal__font">Type: {{ pokemon?.type | titlecase }}</h2>
+              <div class="modal__pokeimg-frame">
+                <img
+                  class="modal__pokeimg"
+                  [lazyLoad]="pokemon.imageUrl"
+                  alt=""
+                />
+              </div>
+              <h2 class="modal__font">Height: {{ pokemon?.height }}cm</h2>
+              <h2 class="modal__font">Weight: {{ pokemon?.weight }}kg</h2>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  <div class="paginationmainframe">
+    <pagination-controls
+      class="pagination"
+      [maxSize]="maxSize"
+      [directionLinks]="directionLinks"
+      [autoHide]="autoHide"
+      [responsive]="responsive"
+      [previousLabel]="labels.previousLabel"
+      [nextLabel]="labels.nextLabel"
+      [screenReaderPaginationLabel]="labels.screenReaderPaginationLabel"
+      [screenReaderPageLabel]="labels.screenReaderPageLabel"
+      [screenReaderCurrentLabel]="labels.screenReaderCurrentLabel"
+      (pageChange)="onPageChange($event)"
+    ></pagination-controls>
+  </div>
+</div>

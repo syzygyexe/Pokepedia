@@ -1,0 +1,38 @@
+.mainframe {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background: url("../../public/main.jpg") center/ cover no-repeat;
+  width: 100wh;
+  height: 100vh;
+}
+
+.maininnerframe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px;
+  background-color: #e50914;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+  width: 330px;
+  height: 90px;
+  font-size: 45px;
+  letter-spacing: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "Pokemon";
+  border-radius: 15px;
+  color: #fdd835;
+  text-shadow: -1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,
+    -1px -1px 0 #000;
+}
+
+.main__button:hover {
+  background: #f40612;
+}

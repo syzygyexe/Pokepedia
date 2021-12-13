@@ -1,0 +1,45 @@
+.loading__screen {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  z-index: 998;
+  height: 100%;
+  width: 100%;
+  background-color: orange;
+}
+
+.loading__screen-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.running__pikachu-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  width: 58px;
+  height: 32px;
+  background: url("../../../assets/img/loading-pikachu.png");
+  animation: walk 1s steps(4) infinite, forward 5s linear infinite;
+}
+
+@keyframes walk {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: 302px;
+  }
+}
+@keyframes forward {
+  0% {
+    transform: translateX(-300px);
+  }
+  100% {
+    transform: translateX(200px);
+  }
+}
